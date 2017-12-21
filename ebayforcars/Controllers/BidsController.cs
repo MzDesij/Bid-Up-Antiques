@@ -57,16 +57,6 @@ namespace ebayforcars.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "product_ID,Amount")] Bid bid)
         {
-          
-
-
-
-
-
-
-
-
-
 
             if (ModelState.IsValid)
             {
