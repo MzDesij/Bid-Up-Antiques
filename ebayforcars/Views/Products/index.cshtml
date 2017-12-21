@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ebayforcars.Models.Product>
+@{
+    ViewBag.Title = "Bidding";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+<div class="wrapper-ie">
+    <h2></h2>
+</div>
+<div class="pagination">
+    <span class="fleft">Displaying 1 to @Model.Count()</span>
+    
+</div>
+@foreach(var item in Model)
+{
+
+<h4>@Html.DisplayFor(modelitem => item.productName)</h4>
+<div class="img-box">
+                                
+    <img src="@Url.Action("Index","DynamicImages",new { id = item.img })" alt="" class="img-indent productimage">
+    <div class="wrapper">
+        <p>@Html.DisplayFor(modelitem => item.description)</p>
+        <div class="wrapper">
+            <span class="price fleft">@Html.DisplayFor(modelitem => item.price)</span>
+            
+            @Html.ActionLink("Buy/Bid","Details","Products",new { id = item.Product_ID },new { @class = "button" })
+        </div>
+    </div>
+</div>
+}
+
+
+
+
+                        

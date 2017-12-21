@@ -1,0 +1,157 @@
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link rel="stylesheet" href="~/Content/reset.css" type="text/css" media="all">
+    <link rel="stylesheet" href="~/Content/style.css" type="text/css" media="all">
+    <!--[if lt IE 7]>
+      <script type="text/javascript" src="http://info.template-help.com/files/ie6_warning/ie6_script_other.js"></script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+
+      <script type="text/javascript" src="~/Scripts/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="main">
+        <!-- header -->
+        <header>
+            <div class="logo">
+                <a href="index.html"><img src="~/Images/bid up logo.jpg" alt=""></a>
+            </div>
+            <nav>
+                <ul>
+
+                        <li><a href="/home/index" class="current">Home</a>/</li>
+                        <li><a href="/Products/index">Bids</a>/</li>
+                        <li><a href="/Products/Create">Sell/Trade</a></li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                       
+                                <li>
+                                    @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                                </li>
+                                <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+
+                        }
+                    }
+                    else
+                    {
+                        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @class = "navbar-right" }))
+                        {
+                            <li><a href="/Account/Register">Register</a>/</li>
+                            <li><a href="/account/login">Login</a></li>
+                        }
+                    }
+
+                </ul>
+            </nav>
+          
+        </header>
+        <section id="banners">
+            <a href="#"><img src="~/Images/ebayforcarsbanner1.jpg" width="890" height="253" alt=""></a>&nbsp;<a href="#"></a>
+        </section>
+        <div class="wrapper">
+            <!-- aside -->
+            <aside id="leftSidebar">
+                <h3>New Arrivals</h3>
+                <div class="box">
+                    <ul class="new_arrivals">
+
+                        <li class="image"><a href="#"><img src="~/Images/1971 Chevy Chevelle SS4.jpg" alt=""height="113" width="150"></a></li>
+                        <li class="name">1971 Chevy Chevelle SS4</li>
+                        <li class="asking price">$15508.00</li>
+                    </ul>
+
+                </div>
+                <h3>New Arrivals</h3>
+                <div class="box">
+                    <div class="inner">
+                        <ul class="new_arrivals">
+
+                            <li class="image"><a href="#"><img src="~/Images/1952 Chevy Fleetline Deluxe.jpg" alt="" height="113" width="150"></a></li>
+                            <li class="name">1952 Chevy Fleetline Deluxe</li>
+                            <li class="asking price">$18508.00</li>
+                            
+                            
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+            <!-- content -->
+            <section id="content">
+                <div class="inside">
+                    <div class="box">
+                        <div class="inner1">
+                            @RenderBody()
+                        </div>
+                     </div>
+                </div>
+            </section>
+            <!-- aside -->
+            <aside id="rightSidebar">
+                <div class="box">
+                    <div class="inner">
+                        <ul class="list1">
+                            <li>
+                                <h6><a href="#">Pending Sales:</a></h6>
+                                pending car(s) <a href="#">0 items</a>
+                            </li>
+                            
+                            <li class="last">
+                                <form action="" id="currencies">
+                                    <fieldset>
+                                        Currencies:
+                                        <div class="field">
+                                            <select><option>US Dollar</option></select>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <h3>Information</h3>
+                <div class="indent">
+                    <ul>
+                        <li><a href="/home/buy">Shipping & Pickup</a></li>
+                        <li><a href="/home/buy">Privacy Notice</a></li>
+                        <li><a href="/home/buy">Contact Us</a></li>
+                        <li><a href="/home/buy">FAQ</a></li>
+
+                    </ul>
+                </div>
+                <a href="#"><img src="~/Images/ebayforcarsbanner3.jpg" alt=""></a>
+            </aside>
+            <!-- content -->
+        </div>
+        <!-- footer -->
+        <footer>
+            <a href="#"><img src="images/billing.jpg" alt="" class="billing"></a>
+            <nav>
+                <ul>
+                    <li><a href="/home/index" class="current">Home</a>/</li>
+                    <li><a href="/Products/index">Bids</a>/</li>
+                    <li><a href="/Products/Create">Sell/Trade</a>/</li>
+                    <li><a href="/Account/Register">Register</a>/</li>
+                    <li><a href="/account/login">Login</a></li>
+                </ul>
+            </nav>
+
+
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

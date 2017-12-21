@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="77487c3eb4aa46a3a1fffdf48cbcf8d1" Name="Diagram1" ZoomLevel="91">
+        <EntityTypeShape EntityType="EbayforCarsModel.User" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EbayforCarsModel.Image" Width="1.5" PointX="0.75" PointY="5.125" />
+        <EntityTypeShape EntityType="EbayforCarsModel.C__MigrationHistory" Width="1.5" PointX="7.625" PointY="5" />
+        <EntityTypeShape EntityType="EbayforCarsModel.AspNetRole" Width="1.5" PointX="1.5" PointY="9" />
+        <EntityTypeShape EntityType="EbayforCarsModel.AspNetUserClaim" Width="1.5" PointX="3" PointY="11.5" />
+        <EntityTypeShape EntityType="EbayforCarsModel.AspNetUserLogin" Width="1.5" PointX="3" PointY="14.25" />
+        <EntityTypeShape EntityType="EbayforCarsModel.AspNetUser" Width="1.5" PointX="0.75" PointY="0.75" />
+        <AssociationConnector Association="EbayforCarsModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="EbayforCarsModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="EbayforCarsModel.FK_dbo_Users_dbo_AspNetUsers" />
+        <AssociationConnector Association="EbayforCarsModel.AspNetUserRoles" />
+        <EntityTypeShape EntityType="EbayforCarsModel.Product" Width="1.5" PointX="0.75" PointY="11.375" />
+        <AssociationConnector Association="EbayforCarsModel.FK__Product__img__656C112C" />
+        <EntityTypeShape EntityType="EbayforCarsModel.Bid" Width="1.5" PointX="3" PointY="5.25" />
+        <AssociationConnector Association="EbayforCarsModel.FK__Bid__product_ID__68487DD7" />
+        <AssociationConnector Association="EbayforCarsModel.FK__Bid__User_ID__52593CB8" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

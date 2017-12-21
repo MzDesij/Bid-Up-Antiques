@@ -1,0 +1,41 @@
+﻿@model ebayforcars.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+<div class="wrapper-ie">
+  
+</div>
+@Html.Partial("_createbidpartial",new ebayforcars.Models.Bid {product_ID=Model.Product_ID,Time=DateTime.Now})
+
+
+
+
+    <h4>@Html.DisplayFor(model => model.productName)  </h4>
+   <span class="price">@Html.DisplayFor(model => model.price)</span>
+    <div class="img-box productdetails">
+
+
+        <img src="@Url.Action("Index","DynamicImages",new { id = Model.img })" alt="" class="img-indent productimage">
+        <div class="wrapper">
+            <p>@Html.DisplayFor(model => model.description)</p>
+            <div class="wrapper">
+                @Html.ActionLink("Back To List", "index", "Products" )
+            </div>
+        </div>
+    </div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+
+
+
+
+
